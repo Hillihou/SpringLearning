@@ -22,10 +22,11 @@ public class demo1 {
         User u5 = applicationContext.getBean("u5", User.class);
         System.out.println(u5);
 
+        User u6 = applicationContext.getBean("u6", User.class);
+        System.out.println(u6);
 
-
-
-
+        User u7 = applicationContext.getBean("u7", User.class);
+        System.out.println(u7);
 
 
     }

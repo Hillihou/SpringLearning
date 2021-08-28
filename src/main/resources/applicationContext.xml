@@ -30,7 +30,27 @@
 
     <bean id="u5" class="com.iweb.pojo.User" p:no="1005" p:name="koko" p:balance="1626.2"></bean>
 
+    <bean id="u6" class="com.iweb.pojo.User">
+        <property name="no" value="1006"></property>
+        <property name="name" value="bob"></property>
+        <property name="balance">
+            <null/>
+        </property>
+    </bean>
 
+    <bean id="u7" class="com.iweb.pojo.User">
+        <property name="no" value="1007"></property>
+        <property name="name">
+            <value><![CDATA[<<ugo>>]]></value>
+        </property>
+        <property name="balance" value="123124"></property>
+    </bean>
+<!--创建service和dao的对象-->
+    <bean id="userService" class="com.iweb.service.UserService">
+<!--注入dao-->
+        <property name="userDao" ref="userDaoImpl"></property>
+    </bean>
+    <bean id="userDaoImpl" class="com.iweb.dao.UserDaoImpl"></bean>
 
 
 </beans>
