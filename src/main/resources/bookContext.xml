@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--提取list集合注入属性-->
+    <util:list id="bookList">
+        <value>易筋经</value>
+        <value>降龙十八掌</value>
+        <value>经济技术</value>
+    </util:list>
+
+    <!--属性注入使用-->
+<bean id="book" class="com.iweb.collection.book">
+    <property name="list" ref="bookList"></property>
+</bean>
+
+
+</beans>

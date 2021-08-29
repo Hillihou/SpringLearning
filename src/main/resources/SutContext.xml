@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="stu1" class="com.iweb.collection.stu">
+        <!--数组类型的注入-->
+        <property name="courses">
+            <!--可以用list和array-->
+            <array>
+                <value>数学</value>
+                <value>java</value>
+                <value>数据库</value>
+            </array>
+        </property>
+
+        <!--list集合类型注入-->
+        <property name="list">
+            <list>
+                <value>张三</value>
+                <value>三三</value>
+                <value>小三</value>
+            </list>
+        </property>
+
+        <!--map集合注入-->
+        <property name="map">
+            <map>
+                <entry key="学科" value="JAVA"></entry>
+                <entry key="科学" value="PHP"></entry>
+            </map>
+        </property>
+
+        <!--set集合注入-->
+        <property name="set">
+            <set>
+                <value>mysql</value>
+                <value>redis</value>
+                <value>oralce</value>
+            </set>
+        </property>
+
+        <!--注入list，值为对象的集合,用ref来引入bean-->
+        <property name="users">
+            <list>
+                <ref bean="u1"></ref>
+                <ref bean="u2"></ref>
+            </list>
+        </property>
+    </bean>
+
+
+    <!--创建多个user对象-->
+    <bean id="u1" class="com.iweb.pojo.User">
+        <constructor-arg name="no" value="1001"></constructor-arg>
+        <constructor-arg name="name" value="sas"></constructor-arg>
+        <constructor-arg name="balance" value="13262.2"></constructor-arg>
+    </bean>
+    <bean id="u2" class="com.iweb.pojo.User">
+        <constructor-arg name="no" value="1003"></constructor-arg>
+        <constructor-arg name="name" value="fdf"></constructor-arg>
+        <constructor-arg name="balance" value="132262.2"></constructor-arg>
+    </bean>
+</beans>

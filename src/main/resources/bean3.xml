@@ -26,9 +26,12 @@
         <property name="ename" value="tom"></property>
         <property name="gender" value="男"></property>
         <property name="dept" ref="dept1"></property>
-<!--        这边要生成dept的get方法才能级联赋值-->
+<!--        这边要生成dept的get方法才能级联赋值，多个属性就要多个property-->
         <property name="dept.dname" value="小卖部"></property>
     </bean>
+
+    <!--配置后置处理器-->
+    <bean id="myprocess" class="com.iweb.pojo.MyBeanPostProcessor"></bean>
 
 
 
